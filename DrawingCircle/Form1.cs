@@ -38,10 +38,12 @@ namespace DrawingCircle
               (int)(center.X + wX/5 * Math.Cos(Math.PI * 30 / 180.0)),
               (int)(center.Y + wY/6 * Math.Sin(Math.PI * 120 / 180.0)));
             e.Graphics.DrawLine(Pens.Black, center, edge);
-            GraphicsText graphicsText = new GraphicsText();
-            graphicsText.Graphics = e.Graphics;
             e.Graphics.DrawEllipse(Pens.Black, new Rectangle(new Point(10, 10), new Size(450, 450)));
             e.Graphics.DrawEllipse(Pens.Black, new Rectangle(new Point(85, 85), new Size(300, 300)));
+
+            GraphicsText graphicsText = new GraphicsText();
+            graphicsText.Graphics = e.Graphics;
+            
             // 绘制围绕点旋转的文本
             StringFormat format = new StringFormat();
             format.Alignment = StringAlignment.Center;
