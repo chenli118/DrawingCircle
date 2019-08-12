@@ -27,20 +27,16 @@ namespace DrawingCircle
         public Form1()
         {
             InitializeComponent();
-            this.Paint += Form1_Paint;
-
-            Point x = this.ClientRectangle.Location;
-
+            this.Paint += Form1_Paint; 
             this.ClientSize = new Size(wX, wY);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {           
-
             Point center = new Point(wX/2, wY/2);
             Point edge = new Point(
-              (int)(center.X + wX/4 * Math.Cos(Math.PI * 30 / 180.0)),
-              (int)(center.Y + wY/4 * Math.Sin(Math.PI * 120 / 180.0)));
+              (int)(center.X + wX/5 * Math.Cos(Math.PI * 30 / 180.0)),
+              (int)(center.Y + wY/6 * Math.Sin(Math.PI * 120 / 180.0)));
             e.Graphics.DrawLine(Pens.Black, center, edge);
             GraphicsText graphicsText = new GraphicsText();
             graphicsText.Graphics = e.Graphics;
