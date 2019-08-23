@@ -13,11 +13,8 @@ namespace DrawingCircle
     public partial class Form1 : Form
     {
         private Font _font = new Font("Arial", 12);
-
         private Brush _brush = new SolidBrush(Color.Black);
-
         private Pen _pen = new Pen(Color.Black, 1f);
-
         private string _text = "角度字";
 
         int wX = 600;
@@ -50,6 +47,18 @@ namespace DrawingCircle
             format.LineAlignment = StringAlignment.Center;
             graphicsText.DrawString(_text, _font, _brush, new PointF(300, 80), format, 160f);
             graphicsText.DrawString(_text, _font, _brush, new PointF(300, 160), format, 30f);
-        } 
+        }
+        bool isShow = false;
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AnimateWinForm af = new AnimateWinForm();
+            isShow = !isShow;
+            if (isShow)
+                af.Show();
+            else
+            {
+                af.WindowClose(); af.WindowClose(); af.WindowClose();
+            }
+            }
     }
 }

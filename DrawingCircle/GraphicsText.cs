@@ -88,7 +88,6 @@ namespace DrawingCircle
             float bottom = float.MinValue;
             foreach (PointF pt in pts)
             {
-
                 // 求取并集
                 if (pt.X < left)
                     left = pt.X;
